@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="..\css\style.css">
+    <script src="..\js\scripts.js"></script>
+    <script>
+        //window.alert("Sejam bem vindos");
+        var canal = "Gama Academy";
+        var cursos = "Curso de javascript";
+        //alert(canal + "\n" + cursos);
+        var nome = prompt("Nome:");
+        document.write("Seja vem vindo " + nome);
+
+        function funcao1() {
+            alert("botao!");
+        }
+
+        //funcao validar foi movida para o arquivo scripts.js
+    </script>
+</head>
+
+<title>
+    不认输
+</title>
+
+<body>
+    <input type="button" onclick="funcao1()" value="Exibir msg">
+    <form name="formulario" action="" method="POST">
+        <label>Nome:</label><input type="text" class="campo_nome" name="nome"><br>
+        <label>Email</label> <input type="text" name="email"><br>
+        <label>Senha:</label> <input type="password" name="senha"><br>
+        <input type="button" onclick="validar()" value="Enviar">
+    </form>
+</body>
+
+</html>

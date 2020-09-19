@@ -1,0 +1,105 @@
+<style>p {
+    background-color: aqua;
+}
+
+body {
+    background-color: aliceblue;
+    font-weight: normal;
+}
+
+li {
+    background-color: red;
+}
+
+.fonte1 {
+    color: rgb(226, 103, 226);
+    font-size: 35px;
+    font-family: monospace;
+}
+
+table {
+    background-color: yellow;
+    border-color: coral;
+    /*border: solid;*/
+}
+
+td {
+    border: solid;
+}
+
+legend {
+    color: yellowgreen;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+fieldset {
+    background-color: white;
+}
+
+
+/*
+"função" de estilo chamada na página de contato
+*/
+
+#area {
+    position: relative;
+    left: 37%;
+    top: 3em;
+    width: 420px;
+    height: 370px;
+}
+
+#formulario input.campo_nome {
+    background-color: chartreuse;
+    position: absolute;
+    left: 30%;
+    margin: 2px;
+    width: 200px;
+}
+
+#formulario input.campo_email {
+    background-color: dodgerblue;
+    position: absolute;
+    left: 45%;
+    margin: -2px;
+    width: 200px;
+}
+
+#formulario textarea.campo_msg {
+    background-color: red;
+    width: 270px;
+    vertical-align: middle;
+}
+
+
+/*
+Container
+*/
+
+.container {
+    border: 3px solid yellowgreen;
+    min-height: 500px;
+}
+
+.div1 {
+    border: 2px solid red;
+}
+
+.div2 {
+    border: 2px solid green;
+}
+
+.div3 {
+    border: 2px solid yellow;
+}
+
+.div4 {
+    border: 2px solid blue;
+}
+
+.div5 {
+    border: 2px solid orange;
+}
+
+</style>
