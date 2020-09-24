@@ -71,5 +71,5 @@ function atualizarJustificativa(id) {
         body: JSON.stringify(mensagem)
     };
     fetch("http://localhost:8080/atualizarocorrencia", mensagem);
-    //window.location = "../html/colaborador.html";
+    window.location = "../html/colaborador.html";
 }
