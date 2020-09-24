@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Colaborador - Justificativa HE</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/colaborador.js"></script>
+</head>
+<header>
+    <nav id="header" class="navbar navbar-default navbar-static-top nonMobile">
+        <img id="imgLogo" src="../imagens/itau-logo.png">
+    </nav>
+    <br>
+</header>
+
+
+<body onload="carregarUsuario()">
+    <div>
+        <div>
+            <div class="panel panel-default widget" style="margin-top:10%">
+                <div class="container_table" style="margin-top:-60px;">
+                    <div class="card" style="display: none;"></div>
+                    <div class="card">
+                        <div class="container_table my-auto">
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3 col.xs-3 my-auto">
+                                    <div id="foto"></div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col.xs-3 container_left my-auto">
+                                    <h3>
+                                        <div id="dados"></div>
+                                    </h3>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col.xs-3 ">
+                                    <button onclick="logout()" type="button" class="btn btn-primary btn-sm">Logout</button>
+                                </div>
+                            </div>
+                            <br><br><br>
+                            <div class="row ">
+                                <div class="col-md-12 col-sm-12 col.xs-3 div5 ">
+                                    <div id="resultado"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

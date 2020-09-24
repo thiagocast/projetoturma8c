@@ -1,79 +1,127 @@
 package br.com.projetofinal.beans;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
-//Elementos com "@" definem annotations e devem estar logo acima das classes
-@Entity 												//define que a classe será uma tabela no banco de dados
-@Table(name="TB_USUARIO")								//nome da tabela
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@Table(name = "itmn232_usuario")
 public class Usuario {
-	
-	@Id													//Define que o atributo será uma chave primária
-	@GeneratedValue(strategy=GenerationType.IDENTITY)	//Coluna ID será incrementada automaticamente pelo DB
-	@Column(name="id")									//nome exato da coluna no DB
-	private int id;
-	
-	@Column(name="nome", length=40)
-	private String nome;
-	
-	@Column(name="email", length=70)
-	private String email;
-	
-	@Column(name="senha", length=20)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_usuario")
+	private int id_usuario;
+
+	@JsonIgnoreProperties("id_usuario")
+	@OneToMany(mappedBy = "id_usuario", cascade = CascadeType.ALL)
+	private List<Ocorrencia> ocorrencias;
+
+	@Column(name = "nome_usuario", length = 100, nullable = false)
+	private String nomeUsuario;
+
+	@Column(name = "email_usuario", length = 100)
+	private String emailUsuario;
+
+	@Column(name = "racf", length = 7, nullable = false, unique = true)
+	private String racf;
+
+	@Column(name = "senha", length = 50, nullable = false)
 	private String senha;
-	
-	@Column(name="foto")
-	private String foto;
-	
-	@Transient											//Necessário para criar variáveis dentro da classe que não existem no banco de dados
-	private String teste;
-	
-	public Usuario() {
-		super();
+
+	@Column(name = "link_foto")
+	private String linkFoto;
+
+	@Column(name = "gestor")
+	private int gestor = 1;
+
+	public int getId_usuario() {
+		return id_usuario;
 	}
-	public Usuario(int id, String nome, String email, String senha, String foto) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.email = email;
-		this.senha = senha;
-		this.foto = foto;
+
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
 	}
-	public int getId() {
-		return id;
+
+	public List<Ocorrencia> getOcorrencias() {
+		return ocorrencias;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public void setOcorrencias(List<Ocorrencia> ocorrencias) {
+		this.ocorrencias = ocorrencias;
 	}
-	public String getNome() {
-		return nome;
+
+	public String getNomeUsuario() {
+		return nomeUsuario;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+
+	public void setNomeUsuario(String nomeUsuario) {
+		this.nomeUsuario = nomeUsuario;
 	}
-	public String getEmail() {
-		return email;
+
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
+
+	public String getRacf() {
+		return racf;
+	}
+
+	public void setRacf(String racf) {
+		this.racf = racf;
+	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getFoto() {
-		return foto;
-	}
-	public void setFoto(String foto) {
-		this.foto = foto;
+
+	public String getLinkFoto() {
+		return linkFoto;
 	}
 
-	
+	public void setLinkFoto(String linkFoto) {
+		this.linkFoto = linkFoto;
+	}
+
+	public int getGestor() {
+		return gestor;
+	}
+
+	public void setGestor(int gestor) {
+		this.gestor = gestor;
+	}
+
+	public Usuario(int id_usuario, List<Ocorrencia> ocorrencias, String nomeUsuario, String emailUsuario, String racf,
+			String senha, String linkFoto, int gestor) {
+		super();
+		this.id_usuario = id_usuario;
+		this.ocorrencias = ocorrencias;
+		this.nomeUsuario = nomeUsuario;
+		this.emailUsuario = emailUsuario;
+		this.racf = racf;
+		this.senha = senha;
+		this.linkFoto = linkFoto;
+		this.gestor = gestor;
+	}
+
+	public Usuario() {
+		super();
+	}
 }
