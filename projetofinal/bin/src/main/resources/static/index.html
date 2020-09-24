@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <title>Login - Justificativa HE</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/login.js"></script>
+</head>
+<header>
+    <nav id="header" class="navbar navbar-default navbar-static-top nonMobile">
+        <img id="imgLogo" src="./imagens/itau-logo.png">
+    </nav>
+    <br>
+</header>
+
+
+<body onload="clearcache()">
+    <div>
+        <div>
+            <div class="panel panel-default widget" style="margin-top:10%">
+                <div class="container" style="margin-top:-60px;">
+                    <div class="card" style="display: none;"></div>
+                    <div class="card">
+                        <form name="form" id="formLogin" method="POST" autocomplete="off">
+                            <div class="input-container">
+                                <label>Login</label>
+                            </div>
+                            <div class="input-container">
+                                <input required name="username" autofocus id="username" maxlength="7" nextfocus="password" type="text" autocomplete="off" placeholder="racf" />
+                                <div class="bar"></div>
+                            </div>
+                            <div class="input-container">
+                                <label>Senha</label>
+                            </div>
+                            <br /><br />
+                            <div class="input-container">
+                                <input required id="password" name="password" type="password" autocomplete="off" placeholder="senha" />
+                                <div class="bar"></div>
+                            </div>
+                            <div class="button-container">
+                                <button onclick="login()" type="button">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
