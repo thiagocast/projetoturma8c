@@ -4,7 +4,7 @@ function carregarUsuario() {
         logout();
     } else {
         document.getElementById("foto").innerHTML = "<img alt='usuario sem foto' width='112px' height='112px' src=../imagens/" + usuario.linkFoto + ">";
-        document.getElementById("dados").innerHTML = "<h3> " + usuario.nomeUsuario + "<br>" + usuario.racf + "<br></h3>";
+        document.getElementById("dados").innerHTML = "<h3> " + usuario.nomeUsuario + "<br>RACF: " + usuario.racf + "<br></h3>";
         carregarOcorrencias(JSON.stringify(usuario.id_usuario));
     }
 }
@@ -60,7 +60,8 @@ function montartabela(lista) {
 
 function justificar(id) {
     localStorage.removeItem("ocorrencia");
-    var ocorrencia = document.getElementById(id).value;
-    localStorage.setItem("ocorrencia", ocorrencia);
+    var ocorrencia = JSON.parse(document.getElementById(id).value);
+    delete ocorrencia.id_usuario.senha;
+    localStorage.setItem("ocorrencia", JSON.stringify(ocorrencia));
     window.location = "../html/justificativa.html";
 }

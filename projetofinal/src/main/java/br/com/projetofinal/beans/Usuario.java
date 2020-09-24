@@ -35,6 +35,7 @@ public class Usuario {
 	@Column(name = "racf", length = 7, nullable = false, unique = true)
 	private String racf;
 
+	@JsonIgnoreProperties("id_usuario")
 	@Column(name = "senha", length = 50, nullable = false)
 	private String senha;
 

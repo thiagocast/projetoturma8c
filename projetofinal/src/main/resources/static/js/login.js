@@ -19,6 +19,7 @@ function login() {
             if (res.gestor == 1) {
                 window.location = "./html/gestor.html";
             }
+            delete res.senha;
             localStorage.setItem("userlogado", JSON.stringify(res));
         })
         .catch(err => {
