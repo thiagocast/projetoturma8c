@@ -4,7 +4,7 @@ function carregarUsuario() {
         logout();
     } else {
         document.getElementById("foto").innerHTML = "<img alt='usuario sem foto' width='112px' height='112px' src=../imagens/" + usuario.linkFoto + ">";
-        document.getElementById("dados").innerHTML = "<h3> " + usuario.nomeUsuario + "<br>" + usuario.racf + "<br>ID:" + usuario.id_usuario + "</h3>";
+        document.getElementById("dados").innerHTML = "<h3> " + usuario.nomeUsuario + "<br>" + usuario.racf + "<br></h3>";
         carregarOcorrencias(JSON.stringify(usuario.id_usuario));
     }
 }

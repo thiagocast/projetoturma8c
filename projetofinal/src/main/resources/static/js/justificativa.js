@@ -4,7 +4,7 @@ function carregarJustificativa() {
         window.location = "../html/colaborador.html";
     } else {
         document.getElementById("foto").innerHTML = "<img alt='usuario sem foto' width='112px' height='112px' src=../imagens/" + ocorrencia.id_usuario.linkFoto + ">";
-        document.getElementById("dados").innerHTML = "<h3> " + ocorrencia.id_usuario.nomeUsuario + "<br>" + ocorrencia.id_usuario.racf + "<br>ID:" + ocorrencia.id_usuario.id_usuario + "</h3>";
+        document.getElementById("dados").innerHTML = "<h3> " + ocorrencia.id_usuario.nomeUsuario + "<br>" + ocorrencia.id_usuario.racf + "<br></h3>";
         document.getElementById("idusuario").innerHTML = ocorrencia.id_usuario.id_usuario;
         formularioOcorrencias();
     }
