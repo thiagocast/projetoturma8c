@@ -11,6 +11,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js" integrity="sha512-ToRWKKOvhBSS8EtqSflysM/S7v9bB9V0X3B1+E7xo7XZBEZCPL3VX5SFIp8zxY19r7Sz0svqQVbAOx+QcLQSAQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.11/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="../js/gestor.js"></script>
 </head>
 <header>
@@ -52,9 +56,9 @@
                                 </div>
                                 <div class="col-md-6 col-sm-5 col.xs-3 div4 " style="margin-top:10px;">
                                     <select class="custom-select" id="comboOcorrencias">
-                                            <option selected value="0">Pendente</option>
-                                            <option value="1">Justificada</option>
-                                        </select>
+                                        <option selected value="0">Pendente</option>
+                                        <option value="1">Justificada</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col.xs-3 div2" style="margin-top:5px;">
                                     <button onclick="filtrarOcorrencia()" type="button" class="btn btn-primary btn-lg">Aplicar</button>
@@ -62,7 +66,17 @@
                             </div>
                             <br><br>
                             <div class="row ">
-                                <div class="col-md-12 col-sm-12 col.xs-3 div5 ">
+                                <div class="col-md-12 col-sm-12 col.xs-3 div5">
+                                    <div class="row ">
+                                        <div class="col-md-3 col-sm-3 col.xs-3 div5"></div>
+                                        <div class="col-md-6 col-sm-6 col.xs-3 div5">
+                                            <input type="text" id="filtrotabela" class="form-control text-center " onkeyup="filtroTabela()" placeholder="Filtrar nome..">
+                                        </div>
+                                        <div class="col-md-3 col-sm-3 col.xs-3 div5">
+                                            <a href="javascript:salvarPDF()" class="btn btn-primary btn-sm ">Salvar PDF</a>
+                                        </div>
+                                    </div>
+                                    <br><br>
                                     <div id="resultado"></div>
                                 </div>
                             </div>

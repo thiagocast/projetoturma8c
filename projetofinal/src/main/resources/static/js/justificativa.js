@@ -29,7 +29,7 @@ function formularioOcorrencias() {
         document.getElementById("qtdhoras").innerHTML = ocorrencia.num_horas;
         document.getElementById("botaoatualizar").innerHTML = "<button onclick=atualizarJustificativa(" + ocorrencia.num_seq + ") type='button' class='btn btn-primary btn-lg'>Atualizar</button>";;
         var atividades = new Object();
-        fetch("http://localhost:8080/atividades/")
+        fetch("http://localhost:80/atividades/")
             .then(res => res.json())
             .then(res => {
                 var dropdown = "<select id='selecaoatividade' class='form-control'>";
@@ -70,6 +70,6 @@ function atualizarJustificativa(id) {
         },
         body: JSON.stringify(mensagem)
     };
-    fetch("http://localhost:8080/atualizarocorrencia", mensagem);
+    fetch("http://localhost:80/atualizarocorrencia", mensagem);
     window.location = "../html/colaborador.html";
 }

@@ -10,7 +10,7 @@ function login() {
         },
         body: JSON.stringify(dados)
     };
-    fetch("http://localhost:8080/login", mensagem)
+    fetch("http://localhost:80/login", mensagem)
         .then(res => res.json())
         .then(res => {
             if (res.gestor == 0) {

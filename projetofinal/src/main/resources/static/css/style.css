@@ -1,21 +1,26 @@
-<style>table {
-    background-color: yellow;
-    border-color: coral;
-    /*border: solid;*/
-}
-
 body {
     background: #e9e9e9;
     color: #767676;
     font-family: 'RobotoDraft', 'Roboto', sans-serif;
     font-size: 14px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 td,
 th {
     padding: 5px;
+}
+
+#comboOcorrencias option {
+    border-color: black;
+    border-width: 1px;
+}
+
+#filtrotabela {
+    width: 70%;
+    font-size: 16px;
+    padding: 6px 10px 6px 20px;
+    margin-bottom: 12px;
+    margin: auto;
 }
 
 #formOcorrencias textarea.campo_msg {
@@ -50,8 +55,6 @@ th {
     color: #767676;
     font-family: 'RobotoDraft', 'Roboto', sans-serif;
     font-size: 14px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -127,14 +130,9 @@ th {
     position: absolute;
     top: 40px;
     right: -70px;
-    -webkit-box-shadow: none;
     box-shadow: none;
-    -webkit-transform: scale(10);
     transform: scale(10);
-    -webkit-transition: -webkit-transform .3s ease;
-    transition: -webkit-transform .3s ease;
     transition: transform .3s ease;
-    transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 .container.active .card.alt .toggle:before {
@@ -147,32 +145,26 @@ th {
     left: 0;
     opacity: 1;
     visibility: visible;
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
 .container.active .card.alt .title {
-    -webkit-transition-delay: .3s;
     transition-delay: .3s;
 }
 
 .container.active .card.alt .input-container {
-    -webkit-transition-delay: .4s;
     transition-delay: .4s;
 }
 
 .container.active .card.alt .input-container:nth-child(2) {
-    -webkit-transition-delay: .5s;
     transition-delay: .5s;
 }
 
 .container.active .card.alt .input-container:nth-child(3) {
-    -webkit-transition-delay: .6s;
     transition-delay: .6s;
 }
 
 .container.active .card.alt .button-container {
-    -webkit-transition-delay: .7s;
     transition-delay: .7s;
 }
 
@@ -181,11 +173,8 @@ th {
     background: #ffffff;
     border-radius: 5px;
     padding: 10px 0 40px 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
@@ -229,7 +218,6 @@ th {
 
 .card .input-container input:focus~label {
     color: #9d9d9d;
-    -webkit-transform: translate(-12%, -50%) scale(0.75);
     transform: translate(-12%, -50%) scale(0.75);
 }
 
@@ -240,7 +228,6 @@ th {
 
 .card .input-container input:valid~label {
     color: #9d9d9d;
-    -webkit-transform: translate(-12%, -50%) scale(0.75);
     transform: translate(-12%, -50%) scale(0.75);
 }
 
@@ -252,7 +239,6 @@ th {
     font-size: 24px;
     font-weight: 300;
     line-height: 60px;
-    -webkit-transition: 0.2s ease;
     transition: 0.2s ease;
 }
 
@@ -272,7 +258,6 @@ th {
     background: #F65E01;
     width: 0;
     height: 2px;
-    -webkit-transition: .2s ease;
     transition: .2s ease;
 }
 
@@ -303,7 +288,6 @@ th {
     line-height: 1;
     text-transform: uppercase;
     overflow: hidden;
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
@@ -311,7 +295,6 @@ th {
     position: relative;
     z-index: 1;
     color: #ddd;
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
@@ -326,7 +309,6 @@ th {
     border-radius: 100%;
     margin: -15px 0 0 -15px;
     opacity: 0;
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
@@ -350,7 +332,6 @@ th {
 .card .button-container button:active:before,
 .card .button-container button:focus:before {
     opacity: 1;
-    -webkit-transform: scale(10);
     transform: scale(10);
 }
 
@@ -363,10 +344,8 @@ th {
     height: 140px;
     background: none;
     border-radius: 100%;
-    -webkit-box-shadow: none;
     box-shadow: none;
     padding: 0;
-    -webkit-transition: .3s ease;
     transition: .3s ease;
 }
 
@@ -376,7 +355,6 @@ th {
     width: 140px;
     height: 140px;
     border-radius: 100%;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     color: #ffffff;
     font-size: 58px;
@@ -391,9 +369,6 @@ th {
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
 }
 
@@ -483,5 +458,3 @@ th {
     z-index: 3;
     display: inline;
 }
-
-</style>

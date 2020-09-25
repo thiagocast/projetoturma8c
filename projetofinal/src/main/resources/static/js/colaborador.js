@@ -15,7 +15,7 @@ function logout() {
 }
 
 function carregarOcorrencias(opcao) {
-    fetch("http://localhost:8080/ocorrencias/colab/" + opcao)
+    fetch("http://localhost:80/ocorrencias/colab/" + opcao)
         .then(res => res.json())
         .then(res => montartabela(res))
 }

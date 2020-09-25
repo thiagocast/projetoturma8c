@@ -10,6 +10,6 @@ import br.com.projetofinal.beans.Ocorrencia;
 public interface OcorrenciaDAO extends CrudRepository<Ocorrencia, Integer> {
 	ArrayList<Ocorrencia> findAllByStatus(int id);
 	
-	@Query(value="SELECT * FROM itmn232_ocorrencia WHERE id_usuario_id_usuario LIKE ?1",nativeQuery = true)
+	@Query(value="SELECT * FROM itmn232_ocorrencia WHERE id_usuario_id_usuario LIKE ?1 ORDER BY status, data_oc DESC",nativeQuery = true)
 	ArrayList<Ocorrencia> findByUserid(int id);
 }

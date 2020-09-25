@@ -18,7 +18,7 @@ function montartabela(lista) {
     var tabela =
         "<div class='row'>" +
         "    <div class='col-12'>" +
-        "        <table align='center' border='1' width='80%'>" +
+        "        <table id='tabelaresultados' align='center' border='1' width='80%'>" +
         "            <tr>" +
         "                <th>Nome do Usuario</th>" +
         "                <th>Racf</th>" +
@@ -49,11 +49,47 @@ function montartabela(lista) {
 function filtrarOcorrencia() {
     var opcao = document.getElementById("comboOcorrencias").value;
     if (opcao == "0" || opcao == "1") {
-        fetch("http://localhost:8080/ocorrencias/" + opcao)
+        fetch("http://localhost:80/ocorrencias/" + opcao)
             .then(res => res.json())
             .then(res => montartabela(res))
             .catch(err => {
                 window.alert("Sem registros");
             });
     }
+}
+
+function filtroTabela() {
+    var input, filtro, table, tr, td, i, txt;
+    input = document.getElementById("filtrotabela");
+    filtro = input.value.toUpperCase();
+    table = document.getElementById("tabelaresultados");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            txt = td.textContent || td.innerText;
+            if (txt.toUpperCase().indexOf(filtro) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+function salvarPDF() {
+    var doc = new jsPDF({ orientation: "landscape" }, 'pt', 'A3');
+    doc.autoTable({ html: '#tabelaresultados' });
+    //doc.autoTable({
+    //    html: '#tabelaresultados',
+    //    styles: {
+    //        font: "courier",
+    //        fontSize: 12,
+    //        rowHeight: 8,
+    //        cellPadding: 1,
+    //        halign: "left"
+    //    }
+    //});
+
+    doc.save('Resultados.pdf');
 }
